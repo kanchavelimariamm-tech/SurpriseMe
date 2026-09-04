@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A surprise date, thoughtfully planned around you."
+    />
+    <title>SurpriseMe — Surprise dates, perfectly planned</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="SurpriseMe home">
+        <span class="brand-mark">✦</span>
+        <span>SurpriseMe</span>
+      </a>
+      <a class="header-link" href="#how-it-works">How it works <span>↘</span></a>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-copy">
+          <p class="eyebrow">A little mystery. A lot of magic.</p>
+          <h1>Your next great<br /><em>story</em> starts here.</h1>
+          <p class="hero-intro">
+            Tell us a little about your perfect day. We’ll handle the
+            reservations, the surprises, and every delicious detail in between.
+          </p>
+          <a class="button button-dark" href="#book">Plan my surprise <span>→</span></a>
+        </div>
+        <div class="hero-art" aria-label="Illustration of a surprise date">
+          <div class="sun"></div>
+          <div class="arch arch-back"></div>
+          <div class="arch arch-front">
+            <div class="arch-window"></div>
+          </div>
+          <div class="sparkle sparkle-one">✦</div>
+          <div class="sparkle sparkle-two">✦</div>
+          <div class="hero-note">A day<br />to remember</div>
+        </div>
+      </section>
+
+      <section class="trust-strip">
+        <div class="section-shell trust-items">
+          <span>Made for curious people</span>
+          <span>✦</span>
+          <span>Thoughtfully planned</span>
+          <span>✦</span>
+          <span>Nothing ordinary</span>
+        </div>
+      </section>
+
+      <section class="booking section-shell" id="book">
+        <div class="section-heading">
+          <p class="eyebrow">The easy part</p>
+          <h2>Make a date of it.</h2>
+          <p>Four tiny decisions. One unforgettable day.</p>
+        </div>
+
+        <div class="booking-layout">
+          <form id="booking-form" class="booking-form">
+            <fieldset class="form-step">
+              <legend><span>01</span> When is your date?</legend>
+              <label for="date">Choose a day</label>
+              <input id="date" name="date" type="date" required />
+            </fieldset>
+
+            <fieldset class="form-step">
+              <legend><span>02</span> How much time do you have?</legend>
+              <div class="option-grid option-grid-two">
+                <label class="choice-card">
+                  <input type="radio" name="duration" value="half-day" data-label="Half day" data-price-add="0" required />
+                  <span class="choice-content">
+                    <strong>Half day</strong>
+                    <small>4–5 hours</small>
+                  </span>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="duration" value="full-day" data-label="Full day" data-price-add="35" />
+                  <span class="choice-content">
+                    <strong>Full day</strong>
+                    <small>7–8 hours <b>+ €35</b></small>
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-step">
+              <legend><span>03</span> Pick your mood</legend>
+              <div class="option-grid option-grid-three">
+                <label class="choice-card plan-card">
+                  <input type="radio" name="plan" value="budget" data-label="Budget" data-price="45" data-value="69" required />
+                  <span class="choice-content">
+                    <strong>Budget</strong>
+                    <small>Simple & sweet</small>
+                    <span class="price">€45 <del>€69</del></span>
+                  </span>
+                </label>
+                <label class="choice-card plan-card featured">
+                  <input type="radio" name="plan" value="fun" data-label="Fun" data-price="75" data-value="109" />
+                  <span class="popular-tag">Most loved</span>
+                  <span class="choice-content">
+                    <strong>Fun</strong>
+                    <small>Playful & surprising</small>
+                    <span class="price">€75 <del>€109</del></span>
+                  </span>
+                </label>
+                <label class="choice-card plan-card">
+                  <input type="radio" name="plan" value="premium" data-label="Premium" data-price="120" data-value="169" />
+                  <span class="choice-content">
+                    <strong>Premium</strong>
+                    <small>Extra special</small>
+                    <span class="price">€120 <del>€169</del></span>
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-step">
+              <legend><span>04</span> Tell us about you</legend>
+              <div class="input-grid">
+                <label>First name <input name="name" type="text" placeholder="Your name" required /></label>
+                <label>Age <input name="age" type="number" min="18" max="120" placeholder="18+" required /></label>
+              </div>
+              <label>Dietary preferences & restrictions <textarea name="dietary" rows="3" placeholder="Vegetarian, allergies, accessibility needs..."></textarea></label>
+              <p class="form-hint">We only use this to make your date feel wonderfully yours.</p>
+            </fieldset>
+            <button class="button button-dark submit-button" type="submit">Continue to payment <span>→</span></button>
+          </form>
+
+          <aside class="summary-card">
+            <div class="summary-top">
+              <span class="summary-label">Your date at a glance</span>
+              <span class="summary-icon">✦</span>
+            </div>
+            <div class="summary-illustration"><span>?</span></div>
+            <p class="summary-message">The best part is not knowing exactly what’s next.</p>
+            <dl class="summary-details">
+              <div><dt>Date</dt><dd id="summary-date">Choose a day</dd></div>
+              <div><dt>Duration</dt><dd id="summary-duration">Choose duration</dd></div>
+              <div><dt>Plan</dt><dd id="summary-plan">Choose a plan</dd></div>
+            </dl>
+            <div class="summary-total">
+              <span>Total</span>
+              <strong id="summary-price">€—</strong>
+            </div>
+            <p class="value-note" id="value-note">Your date is curated at a better-than-DIY price.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="how-it-works section-shell" id="how-it-works">
+        <div class="section-heading">
+          <p class="eyebrow">No spreadsheets. No stress.</p>
+          <h2>We take it from here.</h2>
+        </div>
+        <div class="steps">
+          <article><span>01</span><h3>You choose the feeling.</h3><p>Pick a day, a duration, and a mood. We’ll ask about the details that matter.</p></article>
+          <article><span>02</span><h3>We make the magic.</h3><p>Restaurants, reservations, little extras — all arranged with your person in mind.</p></article>
+          <article><span>03</span><h3>You just show up.</h3><p>Your itinerary arrives before the date. The plan is a secret. The day is yours.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-shell footer-inner">
+        <a class="brand" href="#top"><span class="brand-mark">✦</span><span>SurpriseMe</span></a>
+        <p>For the stories you’ll tell forever.</p>
+      </div>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
