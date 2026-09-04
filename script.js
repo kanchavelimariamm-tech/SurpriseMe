@@ -9,11 +9,25 @@ const summaryPrice = document.querySelector("#summary-price");
 const valueNote = document.querySelector("#value-note");
 const paymentTotal = document.querySelector("#payment-total");
 const includesPanel = document.querySelector("#includes-panel");
+const menuButton = document.querySelector("#menu-button");
+const siteMenu = document.querySelector("#site-menu");
 let currentStep = 1;
 
 const today = new Date();
 today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
 dateInput.min = today.toISOString().split("T")[0];
+
+menuButton.addEventListener("click", () => {
+  const open = siteMenu.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded", String(open));
+});
+
+siteMenu.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    siteMenu.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+  });
+});
 
 const packageDetails = {
   Budget: ["Aperitivo, a lovely dinner and a secret fun activity chosen just for the vibe.", "Think a cosy table, something delicious to share and one small plot twist. The activity is a secret — and very much included."],
