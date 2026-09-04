@@ -22,17 +22,32 @@
         <span class="brand-mark">✦</span>
         <span>SurpriseMe</span>
       </a>
-      <a class="header-link" href="#how-it-works">How it works <span>↘</span></a>
+      <div class="header-actions">
+        <a class="header-link" href="#how-it-works">How it works <span>↘</span></a>
+        <div class="menu-wrap">
+          <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+          <nav class="site-menu" id="site-menu" aria-label="More SurpriseMe">
+            <a href="#locations">500+ verified locations</a>
+            <a href="#reviews">Location reviews</a>
+            <a href="#past-dates">Past date photos</a>
+            <a href="#journal">The SurpriseMe journal</a>
+            <a href="#contact">Contact us</a>
+          </nav>
+        </div>
+      </div>
     </header>
 
     <main id="top">
       <section class="hero section-shell">
         <div class="hero-copy">
           <p class="eyebrow">A little mystery. A lot of magic.</p>
-          <h1>Your next great<br /><em>story</em> starts here.</h1>
+          <h1>We plan your<br /><em>perfect surprise day.</em></h1>
           <p class="hero-intro">
-            Tell us a little about your perfect day. We’ll handle the
-            reservations, the surprises, and every delicious detail in between.
+            Tell us your date, your vibe and a few things you love. We’ll create
+            a one-of-a-kind Munich experience with brilliant food, fun stops and
+            a little mystery — all you have to do is show up.
           </p>
           <a class="button button-dark" href="#book">Plan my surprise <span>→</span></a>
         </div>
@@ -50,11 +65,20 @@
 
       <section class="trust-strip">
         <div class="section-shell trust-items">
-          <span>Made for curious people</span>
+          <span>500+ locations personally visited & verified by our team</span>
           <span>✦</span>
           <span>Thoughtfully planned</span>
           <span>✦</span>
           <span>Nothing ordinary</span>
+        </div>
+      </section>
+
+      <section class="trust-proof section-shell" id="locations">
+        <div class="trust-proof-mark">500<span>+</span></div>
+        <div>
+          <p class="eyebrow">Munich, checked by humans</p>
+          <h2>Every recommendation has<br /><em>a real story behind it.</em></h2>
+          <p>Our team personally visits and verifies the restaurants, bars, makers and little adventures we suggest — so your surprise feels exciting, not like a gamble.</p>
         </div>
       </section>
 
@@ -183,6 +207,38 @@
           <article><span>03</span><h3>You just show up.</h3><p>Your itinerary arrives before the date. The plan is a secret. The day is yours.</p></article>
         </div>
       </section>
+
+      <section class="community section-shell" id="reviews">
+        <div class="section-heading">
+          <p class="eyebrow">A little local intel</p>
+          <h2>What our location<br /><em>scouts say.</em></h2>
+        </div>
+        <div class="review-grid">
+          <article class="review-card"><span>★★★★★</span><blockquote>“The kind of place you would walk past a hundred times — then wonder how you ever missed it.”</blockquote><small>— Location review, Glockenbach</small></article>
+          <article class="review-card"><span>★★★★★</span><blockquote>“Warm hosts, excellent food and just enough weirdness to make the evening memorable.”</blockquote><small>— Location review, Maxvorstadt</small></article>
+          <article class="review-card"><span>★★★★★</span><blockquote>“We tested the surprise ourselves first. Obviously. It was delicious.”</blockquote><small>— The SurpriseMe team</small></article>
+        </div>
+      </section>
+
+      <section class="journal section-shell" id="journal">
+        <div class="section-heading">
+          <p class="eyebrow">From the SurpriseMe notebook</p>
+          <h2>Good food, good fun,<br /><em>excellent plot twists.</em></h2>
+        </div>
+        <div class="journal-grid">
+          <article class="journal-card journal-food"><span class="journal-label">Culinary experiences</span><h3>How to spot a truly great tasting menu</h3><p>Our very unofficial guide to the dishes, details and delightful surprises worth making a night around.</p><a href="#contact">Read the story <span>↗</span></a></article>
+          <article class="journal-card journal-fun"><span class="journal-label">Fun in Munich</span><h3>Three ways to make an ordinary Tuesday memorable</h3><p>Small adventures, big laughs and the exact right amount of “wait, what are we doing?”</p><a href="#contact">Read the story <span>↗</span></a></article>
+          <article class="journal-card journal-photo" id="past-dates"><span class="journal-label">Past dates</span><h3>Little moments from nights out</h3><p>Good tables, happy faces and the sort of memories that deserve a camera roll of their own.</p><a href="#contact">See the gallery <span>↗</span></a></article>
+        </div>
+      </section>
+
+      <section class="contact-section section-shell" id="contact">
+        <div>
+          <p class="eyebrow">Questions, ideas, secret missions?</p>
+          <h2>Say <em>hello.</em></h2>
+        </div>
+        <a class="button button-dark" href="mailto:hello@surpriseme-munich.com">Contact the team <span>↗</span></a>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -192,6 +248,6 @@
       </div>
     </footer>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=5"></script>
   </body>
 </html>
