@@ -59,101 +59,65 @@
       </section>
 
       <section class="booking section-shell" id="book">
-        <div class="section-heading">
-          <p class="eyebrow">The easy part</p>
-          <h2>Make a date of it.</h2>
-          <p>Four tiny decisions. One unforgettable day.</p>
-        </div>
-
         <div class="booking-layout">
           <form id="booking-form" class="booking-form">
-            <fieldset class="form-step">
-              <legend><span>01</span> When is your date?</legend>
-              <label for="date">Choose a day</label>
-              <input id="date" name="date" type="date" required />
-            </fieldset>
-
-            <fieldset class="form-step">
-              <legend><span>02</span> How much time do you have?</legend>
-              <div class="option-grid option-grid-two">
-                <label class="choice-card">
-                  <input type="radio" name="duration" value="half-day" data-label="Half day" data-price-add="0" required />
-                  <span class="choice-content">
-                    <strong>Half day</strong>
-                    <small>4–5 hours</small>
-                  </span>
-                </label>
-                <label class="choice-card">
-                  <input type="radio" name="duration" value="full-day" data-label="Full day" data-price-add="35" />
-                  <span class="choice-content">
-                    <strong>Full day</strong>
-                    <small>7–8 hours <b>+ €35</b></small>
-                  </span>
-                </label>
+            <div class="progress-line"><span id="progress-label">01 / 05</span><span>Munich, we’ve got you ✦</span></div>
+            <section class="wizard-screen active" data-step="1">
+              <p class="eyebrow">First things first</p>
+              <h2>Who’s coming along<br /><em>for the plot?</em></h2>
+              <p class="screen-intro">A solo adventure, a classic two-person rom-com, or a whole little gang? We’ll make it work.</p>
+              <div class="option-grid party-grid">
+                <label class="choice-card"><input type="radio" name="party" value="Solo date" data-people="1" required /><span class="choice-content"><strong>Solo date</strong><small>Just you. Main character energy.</small><span class="choice-emoji">✦</span></span></label>
+                <label class="choice-card"><input type="radio" name="party" value="Party of two" data-people="2" /><span class="choice-content"><strong>Party of two</strong><small>Two tickets to somewhere lovely.</small><span class="choice-emoji">♡</span></span></label>
+                <label class="choice-card"><input type="radio" name="party" value="Group" data-people="4" /><span class="choice-content"><strong>Group</strong><small>Bring the gang. We’ll bring the plan.</small><span class="choice-emoji">✺</span></span></label>
               </div>
-            </fieldset>
+              <button class="button button-dark next-button" type="button">Next little mystery <span>→</span></button>
+            </section>
 
-            <fieldset class="form-step">
-              <legend><span>03</span> Pick your mood</legend>
+            <section class="wizard-screen" data-step="2">
+              <p class="eyebrow">Pick your moment</p>
+              <h2>When should Munich<br /><em>make some memories?</em></h2>
+              <label for="date">Choose a date</label><input id="date" name="date" type="date" required />
+              <fieldset class="mini-fieldset"><legend>How much time are we stealing?</legend><div class="option-grid option-grid-two">
+                <label class="choice-card"><input type="radio" name="duration" value="Half day" data-price-add="0" required /><span class="choice-content"><strong>Half day</strong><small>4–5 hours of lovely.</small></span></label>
+                <label class="choice-card"><input type="radio" name="duration" value="Full day" data-price-add="35" /><span class="choice-content"><strong>Full day</strong><small>7–8 hours of mischief.</small></span></label>
+              </div></fieldset>
+              <div class="wizard-actions"><button class="button button-quiet back-button" type="button">← Back</button><button class="button button-dark next-button" type="button">Choose your vibe <span>→</span></button></div>
+            </section>
+
+            <section class="wizard-screen" data-step="3">
+              <p class="eyebrow">The good stuff</p>
+              <h2>Choose your<br /><em>level of lovely.</em></h2>
+              <p class="screen-intro">Every plan is priced per person. The number below is what your day would usually cost — ours is the friendly shortcut.</p>
               <div class="option-grid option-grid-three">
-                <label class="choice-card plan-card">
-                  <input type="radio" name="plan" value="budget" data-label="Budget" data-price="45" data-value="69" required />
-                  <span class="choice-content">
-                    <strong>Budget</strong>
-                    <small>Simple & sweet</small>
-                    <span class="price">€45 <del>€69</del></span>
-                  </span>
-                </label>
-                <label class="choice-card plan-card featured">
-                  <input type="radio" name="plan" value="fun" data-label="Fun" data-price="75" data-value="109" />
-                  <span class="popular-tag">Most loved</span>
-                  <span class="choice-content">
-                    <strong>Fun</strong>
-                    <small>Playful & surprising</small>
-                    <span class="price">€75 <del>€109</del></span>
-                  </span>
-                </label>
-                <label class="choice-card plan-card">
-                  <input type="radio" name="plan" value="premium" data-label="Premium" data-price="120" data-value="169" />
-                  <span class="choice-content">
-                    <strong>Premium</strong>
-                    <small>Extra special</small>
-                    <span class="price">€120 <del>€169</del></span>
-                  </span>
-                </label>
+                <label class="choice-card plan-card"><input type="radio" name="plan" value="Budget" data-price="45" data-value="69" required /><span class="choice-content"><strong>Budget</strong><small>Simple & sweet</small><span class="price">€45 <del>€69</del></span><span class="per-person">per person</span></span></label>
+                <label class="choice-card plan-card featured"><input type="radio" name="plan" value="Fun" data-price="75" data-value="109" /><span class="popular-tag">Most loved</span><span class="choice-content"><strong>Fun</strong><small>Playful & surprising</small><span class="price">€75 <del>€109</del></span><span class="per-person">per person</span></span></label>
+                <label class="choice-card plan-card"><input type="radio" name="plan" value="Premium" data-price="120" data-value="169" /><span class="choice-content"><strong>Premium</strong><small>Extra special</small><span class="price">€120 <del>€169</del></span><span class="per-person">per person</span></span></label>
               </div>
-            </fieldset>
+              <button class="includes-toggle" type="button" aria-expanded="false">What’s hiding inside? <span>⌄</span></button>
+              <div class="includes-panel" hidden id="includes-panel"></div>
+              <div class="wizard-actions"><button class="button button-quiet back-button" type="button">← Back</button><button class="button button-dark next-button" type="button">Tell us about you <span>→</span></button></div>
+            </section>
 
-            <fieldset class="form-step">
-              <legend><span>04</span> Tell us about you</legend>
-              <div class="input-grid">
-                <label>First name <input name="name" type="text" placeholder="Your name" required /></label>
-                <label>Age <input name="age" type="number" min="18" max="120" placeholder="18+" required /></label>
-              </div>
+            <section class="wizard-screen" data-step="4">
+              <p class="eyebrow">A tiny bit about you</p>
+              <h2>Help us make it<br /><em>feel like yours.</em></h2>
+              <div class="input-grid"><label>First name <input name="name" type="text" placeholder="Your name" required /></label><label>Age <input name="age" type="number" min="18" max="120" placeholder="18+" required /></label></div>
               <label>Dietary preferences & restrictions <textarea name="dietary" rows="3" placeholder="Vegetarian, allergies, accessibility needs..."></textarea></label>
-              <p class="form-hint">We only use this to make your date feel wonderfully yours.</p>
-            </fieldset>
-            <button class="button button-dark submit-button" type="submit">Continue to payment <span>→</span></button>
-          </form>
+              <p class="form-hint">No judgement, just good planning. We only use this to make your date wonderfully yours.</p>
+              <div class="wizard-actions"><button class="button button-quiet back-button" type="button">← Back</button><button class="button button-dark next-button" type="button">One last thing <span>→</span></button></div>
+            </section>
 
-          <aside class="summary-card">
-            <div class="summary-top">
-              <span class="summary-label">Your date at a glance</span>
-              <span class="summary-icon">✦</span>
-            </div>
-            <div class="summary-illustration"><span>?</span></div>
-            <p class="summary-message">The best part is not knowing exactly what’s next.</p>
-            <dl class="summary-details">
-              <div><dt>Date</dt><dd id="summary-date">Choose a day</dd></div>
-              <div><dt>Duration</dt><dd id="summary-duration">Choose duration</dd></div>
-              <div><dt>Plan</dt><dd id="summary-plan">Choose a plan</dd></div>
-            </dl>
-            <div class="summary-total">
-              <span>Total</span>
-              <strong id="summary-price">€—</strong>
-            </div>
-            <p class="value-note" id="value-note">Your date is curated at a better-than-DIY price.</p>
-          </aside>
+            <section class="wizard-screen" data-step="5">
+              <p class="eyebrow">The grand finale</p>
+              <h2>Ready to make it<br /><em>official?</em></h2>
+              <p class="screen-intro">Your surprise is reserved the moment payment goes through. We’ll keep the secrets safe.</p>
+              <div class="payment-box"><span>Secure checkout</span><strong id="payment-total">€—</strong><small>Payment details will be collected securely here.</small></div>
+              <div class="wizard-actions"><button class="button button-quiet back-button" type="button">← Back</button><button class="button button-dark" type="submit">Pay & let the fun begin <span>→</span></button></div>
+            </section>
+            <section class="wizard-screen success-screen" data-step="6"><div class="success-mark">✦</div><p class="eyebrow">All set!</p><h2>Sit back and relax,<br /><em>your special day is in good hands.</em></h2><p class="screen-intro">We’ll send the first little clue soon. The full itinerary arrives before your date — just enough time to get excited.</p><a class="button button-dark" href="#top">Back to the beginning <span>↗</span></a></section>
+          </form>
+          <aside class="summary-card"><div class="summary-top"><span>Your secret plan</span><span class="summary-icon">✦</span></div><div class="summary-illustration"><span>?</span></div><p class="summary-message">The best part is not knowing exactly what’s next.</p><dl class="summary-details"><div><dt>Party</dt><dd id="summary-party">Not chosen yet</dd></div><div><dt>Date</dt><dd id="summary-date">Not chosen yet</dd></div><div><dt>Plan</dt><dd id="summary-plan">Not chosen yet</dd></div></dl><div class="summary-total"><span>Total</span><strong id="summary-price">€—</strong></div><p class="value-note" id="value-note">A little mystery, at a very nice price.</p></aside>
         </div>
       </section>
 

@@ -121,3 +121,52 @@ input:focus, textarea:focus { border-color: var(--ink); }
   .steps { grid-template-columns: 1fr; gap: 38px; }
   .footer-inner { align-items: flex-start; flex-direction: column; gap: 12px; }
 }
+
+/* The booking flow is intentionally bright, quick and a little theatrical. */
+:root { --paper: #fff8f1; --cream: #ffe4cf; --sage: #b8e6d2; --coral: #f05b4f; --ink: #242033; --line: #e8cbb9; --violet: #7667d8; }
+body { background: radial-gradient(circle at 88% 8%, #ffd2c7 0, transparent 23%), var(--paper); }
+.brand-mark, .eyebrow, h1 em, .progress-line span:first-child { color: var(--coral); }
+.hero-art { background: var(--violet); box-shadow: 22px 22px 0 #ffcf77; }
+.sun { background: #ffd166; }
+.arch-back { background: #f68c70; }
+.trust-strip { background: #242033; color: #fff; }
+.trust-items, .trust-items span { color: #fff; }
+.booking { padding-top: 105px; }
+.booking-layout { grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr); }
+.progress-line { display: flex; justify-content: space-between; margin-bottom: 38px; color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.wizard-screen { display: none; animation: arrive .35s ease both; }
+.wizard-screen.active { display: block; }
+@keyframes arrive { from { opacity: 0; transform: translateX(12px); } to { opacity: 1; transform: translateX(0); } }
+.wizard-screen h2 { max-width: 650px; margin: 0 0 18px; font-family: var(--serif); font-size: clamp(43px, 6vw, 68px); font-weight: 500; letter-spacing: -.06em; line-height: .98; }
+.wizard-screen h2 em { color: var(--coral); font-style: italic; }
+.screen-intro { max-width: 520px; margin-bottom: 32px; color: var(--muted); line-height: 1.65; }
+.party-grid { grid-template-columns: repeat(3, 1fr); margin: 35px 0; }
+.party-grid .choice-content { min-height: 160px; background: rgba(255,255,255,.45); }
+.choice-emoji { margin-top: auto; color: var(--coral); font-size: 28px; }
+.choice-card input:checked + .choice-content { border-color: var(--coral); background: #fff0e5; box-shadow: 5px 5px 0 #ffcf77; }
+.mini-fieldset { margin: 30px 0 0; padding: 0; border: 0; }
+.mini-fieldset legend { margin-bottom: 12px; color: var(--ink); font-size: 14px; }
+.wizard-actions { display: flex; align-items: center; gap: 15px; margin-top: 35px; }
+.wizard-actions .button-dark { margin-left: auto; }
+.button-quiet { padding: 0 5px; background: transparent; color: var(--muted); }
+.button-quiet:hover { background: transparent; color: var(--ink); }
+.plan-card .choice-content { min-height: 145px; }
+.per-person { margin-top: 2px; color: var(--muted); font-size: 10px; }
+.includes-toggle { display: flex; justify-content: space-between; width: 100%; margin-top: 22px; padding: 15px 0; border: 0; border-bottom: 1px solid var(--line); background: none; color: var(--ink); font: 600 13px var(--sans); text-align: left; cursor: pointer; }
+.includes-toggle span { color: var(--coral); font-size: 20px; }
+.includes-panel { margin-top: 15px; padding: 17px; background: #fff0e5; border-left: 3px solid var(--coral); font-size: 13px; line-height: 1.5; }
+.includes-panel strong { font-family: var(--serif); font-size: 19px; }
+.includes-panel p { margin: 7px 0 0; color: var(--muted); }
+.payment-box { display: flex; flex-direction: column; gap: 8px; padding: 25px; margin-top: 30px; background: var(--cream); }
+.payment-box span { color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.payment-box strong { font-family: var(--serif); font-size: 50px; font-weight: 500; }
+.payment-box small { color: var(--muted); }
+.success-screen { padding: 50px 0 100px; }
+.success-mark { display: grid; place-items: center; width: 68px; height: 68px; margin-bottom: 26px; border-radius: 50%; background: var(--coral); color: #fff; font-size: 34px; }
+.success-screen .button { margin-top: 16px; }
+.summary-card { background: var(--cream); box-shadow: 10px 10px 0 #ffcf77; }
+.summary-illustration { background: var(--sage); }
+@media (max-width: 800px) {
+  .party-grid, .option-grid-three { grid-template-columns: 1fr; }
+  .party-grid .choice-content { min-height: 90px; }
+}
