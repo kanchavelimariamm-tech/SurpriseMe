@@ -16,9 +16,9 @@ today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
 dateInput.min = today.toISOString().split("T")[0];
 
 const packageDetails = {
-  Budget: ["A sweet little plan with a restaurant reservation, pre-ordered bites and a lovely route through Munich.", "No activity included — just enough room for you to add your own plot twist."],
-  Fun: ["Everything in Budget, plus a playful activity chosen to make you laugh, play or see Munich differently.", "Think mini golf, a secret workshop or something delightfully unexpected."],
-  Premium: ["The full cinematic treatment: a beautiful meal, drinks, a special activity and extra surprises along the way.", "We handle the little luxuries, so you can concentrate on looking effortlessly fabulous."]
+  Budget: ["Aperitivo, a lovely dinner and a secret fun activity chosen just for the vibe.", "Think a cosy table, something delicious to share and one small plot twist. The activity is a secret — and very much included."],
+  Fun: ["Everything in Budget, plus a three-course dinner and a more premium activity with proper main-character energy.", "Expect a playful Munich experience that is a little more polished, a little more surprising and very fun to talk about afterwards."],
+  Premium: ["Everything in Fun, plus a gourmet chef’s tasting experience, beautiful drinks and our most elevated surprise activity.", "In other words: the fancy chapter. Thoughtful details, excellent food and a day that feels wonderfully hard to top."]
 };
 
 function selected(name) {
@@ -72,7 +72,15 @@ function showStep(step) {
 function validateCurrentStep() {
   const screen = screens.find((item) => Number(item.dataset.step) === currentStep);
   const fields = [...screen.querySelectorAll("input, textarea")].filter((field) => field.required);
-  return fields.every((field) => field.reportValidity());
+  const fieldsAreValid = fields.every((field) => field.reportValidity());
+  const groupsAreValid = ["cuisine", "hobby"].every((group) => {
+    const choices = [...screen.querySelectorAll(`input[name="${group}"]`)];
+    if (!choices.length) return true;
+    const selectedCount = choices.filter((choice) => choice.checked).length;
+    choices[0].setCustomValidity(selectedCount === 3 ? "" : `Choose exactly 3 ${group} options.`);
+    return selectedCount === 3;
+  });
+  return fieldsAreValid && groupsAreValid;
 }
 
 document.querySelectorAll(".next-button").forEach((button) => {
@@ -87,6 +95,17 @@ document.querySelectorAll(".back-button").forEach((button) => {
 
 form.addEventListener("change", updateSummary);
 dateInput.addEventListener("input", updateSummary);
+
+form.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+  checkbox.addEventListener("change", () => {
+    const group = checkbox.name;
+    const selectedChoices = [...form.querySelectorAll(`input[name="${group}"]:checked`)];
+    if (selectedChoices.length > 3) checkbox.checked = false;
+    const count = form.querySelectorAll(`input[name="${group}"]:checked`).length;
+    const countLabel = form.querySelector(`.selection-count[data-group="${group}"]`);
+    if (countLabel) countLabel.textContent = `${count} / 3 selected`;
+  });
+});
 
 document.querySelector(".includes-toggle").addEventListener("click", (event) => {
   const open = !planDetailsVisible();

@@ -60,6 +60,7 @@ input:focus, textarea:focus { border-color: var(--ink); }
 .option-grid { display: grid; gap: 10px; }
 .option-grid-two { grid-template-columns: 1fr 1fr; }
 .option-grid-three { grid-template-columns: repeat(3, 1fr); }
+.option-grid-four { grid-template-columns: repeat(4, 1fr); }
 .choice-card { position: relative; display: block; cursor: pointer; }
 .choice-card input { position: absolute; opacity: 0; }
 .choice-content { display: flex; flex-direction: column; min-height: 80px; padding: 17px; border: 1px solid var(--line); border-radius: 3px; transition: border .2s, background .2s; }
@@ -152,6 +153,14 @@ body { background: radial-gradient(circle at 88% 8%, #ffd2c7 0, transparent 23%)
 .button-quiet:hover { background: transparent; color: var(--ink); }
 .plan-card .choice-content { min-height: 145px; }
 .per-person { margin-top: 2px; color: var(--muted); font-size: 10px; }
+.preference-group { margin: 28px 0; padding: 0; border: 0; }
+.preference-group legend { margin-bottom: 12px; font-size: 14px; }
+.check-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.check-grid label { display: flex; align-items: center; gap: 8px; min-height: 42px; padding: 9px 10px; border: 1px solid var(--line); border-radius: 3px; background: rgba(255,255,255,.35); color: var(--ink); font-size: 11px; cursor: pointer; }
+.check-grid label:has(input:checked) { border-color: var(--coral); background: #fff0e5; box-shadow: 3px 3px 0 #ffcf77; }
+.check-grid input { accent-color: var(--coral); }
+.selection-count { display: block; margin-top: 8px; color: var(--coral); font-size: 11px; font-weight: 700; }
+.name-field { margin-top: 26px; }
 .includes-toggle { display: flex; justify-content: space-between; width: 100%; margin-top: 22px; padding: 15px 0; border: 0; border-bottom: 1px solid var(--line); background: none; color: var(--ink); font: 600 13px var(--sans); text-align: left; cursor: pointer; }
 .includes-toggle span { color: var(--coral); font-size: 20px; }
 .includes-panel { margin-top: 15px; padding: 17px; background: #fff0e5; border-left: 3px solid var(--coral); font-size: 13px; line-height: 1.5; }
@@ -169,4 +178,5 @@ body { background: radial-gradient(circle at 88% 8%, #ffd2c7 0, transparent 23%)
 @media (max-width: 800px) {
   .party-grid, .option-grid-three { grid-template-columns: 1fr; }
   .party-grid .choice-content { min-height: 90px; }
+  .check-grid, .option-grid-four { grid-template-columns: repeat(2, 1fr); }
 }

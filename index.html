@@ -88,10 +88,10 @@
             <section class="wizard-screen" data-step="3">
               <p class="eyebrow">The good stuff</p>
               <h2>Choose your<br /><em>level of lovely.</em></h2>
-              <p class="screen-intro">Every plan is priced per person. The number below is what your day would usually cost — ours is the friendly shortcut.</p>
+              <p class="screen-intro">Every plan is priced per person. The crossed-out number is the going-out-yourself price. The bright number is what you pay when we do the plotting.</p>
               <div class="option-grid option-grid-three">
-                <label class="choice-card plan-card"><input type="radio" name="plan" value="Budget" data-price="45" data-value="69" required /><span class="choice-content"><strong>Budget</strong><small>Simple & sweet</small><span class="price">€45 <del>€69</del></span><span class="per-person">per person</span></span></label>
-                <label class="choice-card plan-card featured"><input type="radio" name="plan" value="Fun" data-price="75" data-value="109" /><span class="popular-tag">Most loved</span><span class="choice-content"><strong>Fun</strong><small>Playful & surprising</small><span class="price">€75 <del>€109</del></span><span class="per-person">per person</span></span></label>
+                <label class="choice-card plan-card"><input type="radio" name="plan" value="Budget" data-price="45" data-value="69" required /><span class="choice-content"><strong>Budget</strong><small>Simple & sweet</small><span class="price">€45 <del>€69</del></span><span class="per-person">per person · save €24</span></span></label>
+                <label class="choice-card plan-card featured"><input type="radio" name="plan" value="Fun" data-price="75" data-value="113" /><span class="popular-tag">Most loved</span><span class="choice-content"><strong>Fun</strong><small>Playful & surprising</small><span class="price">€75 <del>€113</del></span><span class="per-person">per person · save €38</span></span></label>
                 <label class="choice-card plan-card"><input type="radio" name="plan" value="Premium" data-price="120" data-value="169" /><span class="choice-content"><strong>Premium</strong><small>Extra special</small><span class="price">€120 <del>€169</del></span><span class="per-person">per person</span></span></label>
               </div>
               <button class="includes-toggle" type="button" aria-expanded="false">What’s hiding inside? <span>⌄</span></button>
@@ -100,11 +100,20 @@
             </section>
 
             <section class="wizard-screen" data-step="4">
-              <p class="eyebrow">A tiny bit about you</p>
-              <h2>Help us make it<br /><em>feel like yours.</em></h2>
-              <div class="input-grid"><label>First name <input name="name" type="text" placeholder="Your name" required /></label><label>Age <input name="age" type="number" min="18" max="120" placeholder="18+" required /></label></div>
-              <label>Dietary preferences & restrictions <textarea name="dietary" rows="3" placeholder="Vegetarian, allergies, accessibility needs..."></textarea></label>
-              <p class="form-hint">No judgement, just good planning. We only use this to make your date wonderfully yours.</p>
+              <p class="eyebrow">The personality quiz (but nicer)</p>
+              <h2>Give us three clues<br /><em>about your kind of fun.</em></h2>
+              <p class="screen-intro">It’s still a surprise — promise. We’re only getting to know the persona so the day feels uncannily right.</p>
+              <fieldset class="preference-group"><legend>Pick up to three favourite cuisines</legend><div class="check-grid">
+                <label><input type="checkbox" name="cuisine" value="Italian" /> Italian</label><label><input type="checkbox" name="cuisine" value="Japanese" /> Japanese</label><label><input type="checkbox" name="cuisine" value="Mexican" /> Mexican</label><label><input type="checkbox" name="cuisine" value="Indian" /> Indian</label><label><input type="checkbox" name="cuisine" value="French" /> French</label><label><input type="checkbox" name="cuisine" value="Middle Eastern" /> Middle Eastern</label><label><input type="checkbox" name="cuisine" value="Thai" /> Thai</label><label><input type="checkbox" name="cuisine" value="Surprise me" /> Surprise me</label>
+              </div><small class="selection-count" data-group="cuisine">Choose 3</small></fieldset>
+              <fieldset class="preference-group"><legend>Pick up to three things you love doing</legend><div class="check-grid">
+                <label><input type="checkbox" name="hobby" value="Trying new food" /> Trying new food</label><label><input type="checkbox" name="hobby" value="Live music" /> Live music</label><label><input type="checkbox" name="hobby" value="Museums & art" /> Museums & art</label><label><input type="checkbox" name="hobby" value="Being outdoors" /> Being outdoors</label><label><input type="checkbox" name="hobby" value="Games & puzzles" /> Games & puzzles</label><label><input type="checkbox" name="hobby" value="Dancing" /> Dancing</label><label><input type="checkbox" name="hobby" value="Crafts & making" /> Crafts & making</label><label><input type="checkbox" name="hobby" value="A good plot twist" /> A good plot twist</label>
+              </div><small class="selection-count" data-group="hobby">Choose 3</small></fieldset>
+              <fieldset class="preference-group"><legend>What’s your age range?</legend><div class="option-grid option-grid-four">
+                <label class="choice-card"><input type="radio" name="age" value="18–25" required /><span class="choice-content"><strong>18–25</strong></span></label><label class="choice-card"><input type="radio" name="age" value="25–35" /><span class="choice-content"><strong>25–35</strong></span></label><label class="choice-card"><input type="radio" name="age" value="35–50" /><span class="choice-content"><strong>35–50</strong></span></label><label class="choice-card"><input type="radio" name="age" value="50+" /><span class="choice-content"><strong>50+</strong></span></label>
+              </div></fieldset>
+              <label>Anything we should know about food or access? <textarea name="dietary" rows="2" placeholder="Allergies, preferences, accessibility needs..."></textarea></label>
+              <label class="name-field">And finally, what should we call you? <input name="name" type="text" placeholder="First name" required /></label>
               <div class="wizard-actions"><button class="button button-quiet back-button" type="button">← Back</button><button class="button button-dark next-button" type="button">One last thing <span>→</span></button></div>
             </section>
 
@@ -141,6 +150,6 @@
       </div>
     </footer>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="script.js"></script>
+    <script src="script.js?v=3"></script>
   </body>
 </html>
