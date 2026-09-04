@@ -126,3 +126,27 @@ document.querySelector('a[href="#book"]').addEventListener("click", (event) => {
   document.querySelector("#book").scrollIntoView({ behavior: "smooth" });
   window.setTimeout(() => showStep(1), 450);
 });
+
+document.querySelectorAll(".subscription-option").forEach((option) => {
+  option.addEventListener("click", () => {
+    const label = option.dataset.subscription === "three" ? "three dates a month" : "one date a month";
+    document.querySelector("#subscription-status").textContent = `Lovely choice — ${label} is ready to join.`;
+  });
+});
+
+document.querySelector("#referral-button").addEventListener("click", async () => {
+  const referralLink = `${window.location.origin}${window.location.pathname}?ref=surpriseme`;
+  try {
+    await navigator.clipboard.writeText(referralLink);
+    document.querySelector("#referral-status").textContent = "Link copied — €10 credits are on their way to both of you.";
+  } catch {
+    document.querySelector("#referral-status").textContent = `Share this link: ${referralLink}`;
+  }
+});
+
+document.querySelector("#selfie-upload").addEventListener("change", (event) => {
+  const file = event.currentTarget.files?.[0];
+  document.querySelector("#selfie-status").textContent = file
+    ? `${file.name} is ready to send when selfie submissions are connected.`
+    : "";
+});

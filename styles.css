@@ -43,6 +43,33 @@ h1 em { color: var(--coral); font-style: italic; }
 .trust-strip { background: var(--cream); padding: 18px 0; }
 .trust-items { display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .trust-items span:nth-child(even) { color: var(--coral); font-size: 15px; }
+.perks { padding: 110px 0 30px; }
+.perks-heading { display: grid; grid-template-columns: .9fr 1.1fr; column-gap: 70px; align-items: end; }
+.perks-heading .eyebrow { grid-column: 1 / -1; }
+.perks-heading h2 { margin-bottom: 0; }
+.perks-heading h2 em { color: var(--coral); font-style: italic; }
+.perks-heading > p:last-child { max-width: 390px; margin: 0 0 5px; color: var(--muted); line-height: 1.65; }
+.perks-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 50px; }
+.perk-card { position: relative; min-height: 370px; padding: 24px; border-radius: 3px; overflow: hidden; }
+.perk-card:nth-child(1) { background: #ffd2c2; }
+.perk-card:nth-child(2) { background: #d9d4ff; }
+.perk-card:nth-child(3) { background: #c6eddc; }
+.perk-number { color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .1em; }
+.perk-icon { position: absolute; top: 18px; right: 23px; color: var(--coral); font-family: var(--serif); font-size: 36px; }
+.perk-card h3 { max-width: 230px; margin: 42px 0 12px; font-family: var(--serif); font-size: 27px; font-weight: 500; line-height: 1.05; }
+.perk-card > p { max-width: 300px; color: var(--ink); font-size: 13px; line-height: 1.55; }
+.subscription-options { display: grid; gap: 7px; margin-top: 20px; }
+.subscription-option { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 11px 12px; border: 1px solid rgba(36,32,51,.2); border-radius: 3px; background: rgba(255,255,255,.35); color: var(--ink); text-align: left; cursor: pointer; }
+.subscription-option:hover, .featured-subscription { border-color: var(--coral); background: rgba(255,255,255,.68); }
+.subscription-option span:first-child { display: flex; flex-direction: column; gap: 2px; }
+.subscription-option strong { font-size: 11px; }
+.subscription-option small { color: var(--muted); font-size: 10px; }
+.subscription-option > span:last-child { color: var(--coral); font-size: 13px; font-weight: 700; white-space: nowrap; }
+.text-button, .upload-button { display: inline-flex; align-items: center; gap: 18px; margin-top: 14px; padding: 0 0 8px; border: 0; border-bottom: 1px solid var(--ink); background: transparent; color: var(--ink); font: 600 12px var(--sans); cursor: pointer; }
+.text-button span, .upload-button span { font-size: 17px; }
+.upload-button { margin-top: 22px; }
+#selfie-upload { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.perk-status { min-height: 17px; margin-top: 10px !important; color: var(--coral) !important; font-size: 11px !important; font-weight: 700; }
 .booking { padding: 120px 0 130px; }
 .section-heading { margin-bottom: 48px; }
 .section-heading h2 { margin-bottom: 12px; font-family: var(--serif); font-size: clamp(42px, 5vw, 62px); font-weight: 500; letter-spacing: -.05em; line-height: 1; }
@@ -179,4 +206,8 @@ body { background: radial-gradient(circle at 88% 8%, #ffd2c7 0, transparent 23%)
   .party-grid, .option-grid-three { grid-template-columns: 1fr; }
   .party-grid .choice-content { min-height: 90px; }
   .check-grid, .option-grid-four { grid-template-columns: repeat(2, 1fr); }
+  .perks-heading { display: block; }
+  .perks-heading > p:last-child { margin-top: 18px; }
+  .perks-grid { grid-template-columns: 1fr; }
+  .perk-card { min-height: auto; }
 }
